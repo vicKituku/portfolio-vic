@@ -1,0 +1,192 @@
+{% load static %}
+<article class="blog" data-page="blog">
+  <header>
+    <h2 class="h2 article-title">Blog</h2>
+  </header>
+  <section class="blog-posts">
+    <ul class="blog-posts-list">
+      {% for blog in blogs %}
+      {% if blog.is_active %}
+
+      <li class="blog-post-item">
+        <a href="#">
+          <figure class="blog-banner-box">
+            <img
+              src="{{blog.image.url}}"
+
+              loading="lazy"
+            />
+          </figure>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <p class="blog-category">Design</p>
+              <span class="dot"></span>
+              <time datetime="2022-02-23">Feb 23, 2022</time>
+            </div>
+            <h3 class="h3 blog-item-title">{{blog.name}}</h3>
+            <p class="blog-text">
+              {{blog.description}}
+            </p>
+          </div>
+        </a>
+      </li>
+
+      {% endif%}
+      {% endfor %}
+    </ul>
+    <!-- <ul class="blog-posts-list">
+      <li class="blog-post-item">
+        <a href="#">
+          <figure class="blog-banner-box">
+            <img
+              src="{% static 'images/blog-1.jpg' %}"
+              alt="Desgin conferences"
+              loading="lazy"
+            />
+          </figure>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <p class="blog-category">Design</p>
+              <span class="dot"></span>
+              <time datetime="2022-02-23">Feb 23, 2022</time>
+            </div>
+            <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
+            <p class="blog-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Repellendus impedit eligendi possimus voluptatum iusto itaque quam
+              quaerat nesciunt nobis quibusdam. Voluptatibus doloribus aliquid
+              architecto! Sint velit doloribus quo minus aspernatur!
+            </p>
+          </div>
+        </a>
+      </li>
+      <li class="blog-post-item">
+        <a href="#">
+          <figure class="blog-banner-box">
+            <img
+              src="{% static 'images/blog-2.jpg' %}"
+              alt="Desgin conferences"
+              loading="lazy"
+            />
+          </figure>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <p class="blog-category">Design</p>
+              <span class="dot"></span>
+              <time datetime="2022-02-23">Feb 23, 2022</time>
+            </div>
+            <h3 class="h3 blog-item-title">
+              Best fonts every designer should use
+            </h3>
+            <p class="blog-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Repellendus impedit eligendi possimus voluptatum iusto itaque quam
+              quaerat nesciunt nobis quibusdam. Voluptatibus doloribus aliquid
+              architecto! Sint velit doloribus quo minus aspernatur!
+            </p>
+          </div>
+        </a>
+      </li>
+      <li class="blog-post-item">
+        <a href="#">
+          <figure class="blog-banner-box">
+            <img
+              src="{% static 'images/blog-3.jpg' %}"
+              alt="Desgin digest"
+              loading="lazy"
+            />
+          </figure>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <p class="blog-category">Design</p>
+              <span class="dot"></span>
+              <time datetime="2022-02-23">Feb 23, 2022</time>
+            </div>
+            <h3 class="h3 blog-item-title">Design Digest #80</h3>
+            <p class="blog-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Repellendus impedit eligendi possimus voluptatum iusto itaque quam
+              quaerat nesciunt nobis quibusdam. Voluptatibus doloribus aliquid
+              architecto! Sint velit doloribus quo minus aspernatur!
+            </p>
+          </div>
+        </a>
+      </li>
+      <li class="blog-post-item">
+        <a href="#">
+          <figure class="blog-banner-box">
+            <img
+              src="{% static 'images/blog-4.jpg' %}"
+              alt="Desgin Interactions"
+              loading="lazy"
+            />
+          </figure>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <p class="blog-category">Design</p>
+              <span class="dot"></span>
+              <time datetime="2022-02-23">Feb 23, 2022</time>
+            </div>
+            <h3 class="h3 blog-item-title">UI intaractions of the week</h3>
+            <p class="blog-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Repellendus impedit eligendi possimus voluptatum iusto itaque quam
+              quaerat nesciunt nobis quibusdam. Voluptatibus doloribus aliquid
+              architecto! Sint velit doloribus quo minus aspernatur!
+            </p>
+          </div>
+        </a>
+      </li>
+      <li class="blog-post-item">
+        <a href="#">
+          <figure class="blog-banner-box">
+            <img
+              src="{% static 'images/blog-5.jpg' %}"
+              alt="Desgin Interactions"
+              loading="lazy"
+            />
+          </figure>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <p class="blog-category">Design</p>
+              <span class="dot"></span>
+              <time datetime="2022-02-23">Feb 23, 2022</time>
+            </div>
+            <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
+            <p class="blog-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Repellendus impedit eligendi possimus voluptatum iusto itaque quam
+              quaerat nesciunt nobis quibusdam. Voluptatibus doloribus aliquid
+              architecto! Sint velit doloribus quo minus aspernatur!
+            </p>
+          </div>
+        </a>
+      </li>
+      <li class="blog-post-item">
+        <a href="#">
+          <figure class="blog-banner-box">
+            <img
+              src="{% static 'images/blog-6.jpg' %}"
+              alt="Desgin Interactions"
+              loading="lazy"
+            />
+          </figure>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <p class="blog-category">Design</p>
+              <span class="dot"></span>
+              <time datetime="2022-02-23">Feb 23, 2022</time>
+            </div>
+            <h3 class="h3 blog-item-title">Design digest #78</h3>
+            <p class="blog-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Repellendus impedit eligendi possimus voluptatum iusto itaque quam
+              quaerat nesciunt nobis quibusdam. Voluptatibus doloribus aliquid
+              architecto! Sint velit doloribus quo minus aspernatur!
+            </p>
+          </div>
+        </a>
+      </li>
+    </ul> -->
+  </section>
+</article>

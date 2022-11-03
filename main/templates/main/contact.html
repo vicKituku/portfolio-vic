@@ -1,0 +1,57 @@
+<article class="contact" data-page="contact">
+  <header>
+    <h2 class="h2 article-title">Contact</h2>
+  </header>
+  {% load static %}
+
+  <section class="mapbox" data-mapbox>
+    <figure>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.9350833029885!2d36.77382075081104!3d-1.2056124358804052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f22b6982286bf%3A0xa84340415d56f0c5!2sJames%20Dr%2C%20Ruaka!5e0!3m2!1sen!2ske!4v1664792180807!5m2!1sen!2ske"
+        width="600"
+        height="450"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </figure>
+  </section>
+  <section class="contact-form">
+    <h3 class="h3 form-title">Contact Form</h3>
+    <form method="POST" action="" class="form" data-form>
+      {% csrf_token %}
+      <div class="input-wrapper">
+        <!-- <input
+          type="text"
+          name="fullname"
+          class="form-input"
+          placeholder="Full name"
+          required
+          data-form-input
+        /> -->
+        {{form.name}}
+        <!-- <input
+          type="email"
+          name="email"
+          class="form-input"
+          placeholder="Email address"
+          required
+          data-form-input
+        /> -->
+        {{form.email}}
+      </div>
+      <!-- <textarea
+        name="message"
+        class="form-input"
+        placeholder="Your Message"
+        required
+        data-form-input
+      ></textarea> -->
+      {{form.message}}
+
+      <button class="form-btn" type="submit" disabled data-form-btn>
+        <ion-icon name="paper-plane"></ion-icon>
+        <span>Send Message</span>
+      </button>
+    </form>
+  </section>
+</article>
