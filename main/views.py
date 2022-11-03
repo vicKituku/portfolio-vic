@@ -4,7 +4,7 @@ from .models import *
 from django.views import generic
 from .forms import ContactForm
 
-# Create your class and functionbased views here
+# Create your views here
 
 class IndexView(generic.TemplateView):
     template_name = "main/base.html"
